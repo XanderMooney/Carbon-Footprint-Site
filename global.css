@@ -1,0 +1,15 @@
+:root {
+    --aqua: #A5F1E9;
+    --darkAqua: #7FE9DE;
+    --mint: #CFFDE1;
+    --sand: #FFF6BF;
+    --wetSand: #FFEBAD;
+}
+
+html, body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: var(--mint);
+}
