@@ -1,15 +1,78 @@
+/* #region Global Changes */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
+
 :root {
     --aqua: #A5F1E9;
     --darkAqua: #7FE9DE;
     --mint: #CFFDE1;
     --sand: #FFF6BF;
     --wetSand: #FFEBAD;
+    --warmSand: #e9b07f;
+    --thatsRed: #e97f84;
+    --coolPink: #e97fb9;
+    --text: #7f8ae9;
 }
-
 html, body {
     width: 100vw;
     height: 100vh;
     margin: 0;
     padding: 0;
-    background-color: var(--mint);
+    background-color: var(--darkAqua);
+    font-family: 'Merriweather', serif;
 }
+/* #endregion */
+/* #region navbar */
+nav {
+    position: fixed;
+    padding: 0;
+    height: 100vh;
+    width: calc(10vw + 10vh);
+    background-color: var(--sand);
+    margin-left: 0;
+    transition: margin-left 400ms;
+    color: var(--text);
+}
+nav.hidden {
+    margin-left: calc((-10vw - 10vh));
+}
+nav > p {
+    margin-left: 1rem;
+}
+#nav-icon {
+    width: 5vw;
+    height: 5vw;
+    border: none;
+    border-radius: 2rem;
+    background-color: var(--sand);
+    margin-left: calc(7svw + 10svh);
+    display: grid;
+    grid-auto-flow: row;
+    align-items: center;
+    grid-template-rows: 1fr 1.5svh 1.5svh 1.5svh 1fr;
+    transition: border-radius 400ms,
+                grid-template-rows 400ms,
+                margin-left 400ms;
+}
+.line {
+    width: 50%;
+    height: 0.5vh;
+    margin-left: 25%;
+    background-color: black;
+    transition: opacity 400ms;
+}
+nav > a > #nav-icon:hover {
+    border-radius: 1rem;
+    grid-template-rows: 1fr 2svh 2svh 2svh 1fr;
+}
+nav.hidden > a:hover > #nav-icon {
+    margin-left: calc(9svw + 10svh);
+}
+nav.hidden > a:not(:hover) > #nav-icon .line {
+    opacity: 0;
+}
+nav.hidden > a:hover > #nav-icon div:not(.line) {
+    background-color: var(--sand);
+    height: 100%;
+    width: 50%;
+}
+/* #endregion */
