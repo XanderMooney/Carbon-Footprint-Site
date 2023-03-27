@@ -1,6 +1,5 @@
 /* #region Global Changes */
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
-
 :root {
     --aqua: #A5F1E9;
     --darkAqua: #7FE9DE;
@@ -10,7 +9,9 @@
     --warmSand: #e9b07f;
     --thatsRed: #e97f84;
     --coolPink: #e97fb9;
-    --text: #7f8ae9;
+    --text: #000;
+    --green: #68B984;
+    --darkGreen: #3D5656;
 }
 html, body {
     width: 100vw;
@@ -21,7 +22,7 @@ html, body {
     font-family: 'Merriweather', serif;
 }
 /* #endregion */
-/* #region navbar */
+/* #region Navbar */
 nav {
     position: fixed;
     padding: 0;
@@ -35,16 +36,21 @@ nav {
 nav.hidden {
     margin-left: calc((-10vw - 10vh));
 }
-nav > p {
-    margin-left: 1rem;
+nav > h2 {
+    margin-left: 1vw;
+    font-size: calc(1.25vw + 1.25vh);
+}
+a {
+    text-decoration: none;
+    color: var(--text);
 }
 #nav-icon {
     width: 5vw;
     height: 5vw;
     border: none;
-    border-radius: 2rem;
+    border-radius: 0 2rem 2rem 0;
     background-color: var(--sand);
-    margin-left: calc(7svw + 10svh);
+    margin-left: calc(7.5svw + 10svh);
     display: grid;
     grid-auto-flow: row;
     align-items: center;
@@ -60,19 +66,74 @@ nav > p {
     background-color: black;
     transition: opacity 400ms;
 }
-nav > a > #nav-icon:hover {
-    border-radius: 1rem;
-    grid-template-rows: 1fr 2svh 2svh 2svh 1fr;
-}
-nav.hidden > a:hover > #nav-icon {
-    margin-left: calc(9svw + 10svh);
-}
-nav.hidden > a:not(:hover) > #nav-icon .line {
+/* #endregion */
+/* #region Bootstrap Variables */
+.opacity-0 {
     opacity: 0;
 }
-nav.hidden > a:hover > #nav-icon div:not(.line) {
-    background-color: var(--sand);
-    height: 100%;
-    width: 50%;
+.screen-100 {
+    width: 100vw;
+    height: 100vh;
+}
+.bcg-mint {
+    background-color: var(--mint);
+}
+.bcg-darkAqua {
+    background-color: var(--darkAqua);
+}
+.bcg-aqua {
+    background-color: var(--aqua);
+}
+.bcg-green {
+    background-color: var(--green);
+}
+.bcg-darkGreen {
+    background-color: var(--darkGreen);
+}
+.bcg-red {
+    background-color: var(--thatsRed);
+}
+.bcg-pink {
+    background-color: var(--coolPink);
+}
+.centered {
+    text-align: center;
+    justify-self: center;
+}
+.pos-fixed {
+    position: fixed;
+}
+/* #endregion */
+/* #region Media Queries */
+@media (min-aspect-ratio: 1.5/1) { /*on horizontal devices*/
+    nav > a > #nav-icon:hover {
+        border-radius: 0 1rem 1rem 0;
+        grid-template-rows: 1fr 2svh 2svh 2svh 1fr;
+    }
+    nav.hidden > a:hover > #nav-icon {
+        margin-left: calc(9.5svw + 10svh);
+    }
+    nav.hidden > a:not(:hover) > #nav-icon .line {
+        opacity: 0;
+    }
+}
+@media (max-aspect-ratio: 1.5/1) { /* on (almost) vertically oriented devices */
+    nav.hidden > a > #nav-icon {
+        margin-left: calc(9.5svw + 10svh);
+    }
+    nav.hidden > a > #nav-icon .line {
+        opacity: 1;
+    }
+    #nav-icon {
+        width: 8vw;
+        height: 8vw;
+        border-radius: 0 3rem 3rem 0;
+    }
+}
+@media (max-aspect-ratio: 1/1) { /* on vertically oriented devices */
+    #nav-icon {
+        width: 10vw;
+        height: 10vw;
+    }
 }
 /* #endregion */

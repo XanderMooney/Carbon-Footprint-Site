@@ -1,15 +1,13 @@
 const NAV = document.getElementById('nav')
 let navShown = false;
 
-
 function toggleNav()
 {
+    navShown = !navShown
     if (navShown)
     {
-        NAV.classList.add('hidden')
-        navShown = false
+        NAV.classList.remove('hidden')
         return;
     }
-    navShown = true
-    NAV.classList.remove('hidden')
+    NAV.classList.add('hidden')
 }
