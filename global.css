@@ -75,10 +75,9 @@ nav > ul > li {
 /* #region Sizing */
 .screen-100 {
     width: 100svw;
-    height: 100svh;
+    /* height: 100svh; */
     padding: 0;
     margin: 0;
-    overflow:auto;
 }
 .grid-90-2 {
     display: grid;
@@ -92,6 +91,13 @@ nav > ul > li {
     margin-left: auto;
     margin-right: auto;
 }
+.grid-vertical {
+    grid-auto-flow: row;
+}
+.grid-vertical.grid-90-2 {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+}
 .img-90 {
     position: relative;
     padding: 0;
@@ -100,6 +106,15 @@ nav > ul > li {
     margin-right: auto;
     width: 90%;
     height:calc(min(90vh, 90%));
+    object-fit: cover;
+}
+.img-100 {
+    position: relative;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    height:calc(min(100vh, 100%));
     object-fit: cover;
 }
 /* #endregion */
