@@ -46,6 +46,9 @@ a {
     text-decoration: none;
     color: var(--text);
 }
+img {
+    user-select: none;
+}
 #nav-icon {
     width: 5svw;
     height: 5svw;
@@ -78,6 +81,7 @@ nav > ul > li {
     /* height: 100svh; */
     padding: 0;
     margin: 0;
+    border: 0;
 }
 .grid-90-2 {
     display: grid;
@@ -91,10 +95,30 @@ nav > ul > li {
     margin-left: auto;
     margin-right: auto;
 }
+.grid-100-2 {
+    display: grid;
+    position: relative;
+    width: 100%;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    text-align: center;
+
+    margin-left: auto;
+    margin-right: auto;
+}
 .grid-vertical {
     grid-auto-flow: row;
 }
 .grid-vertical.grid-90-2 {
+    width:  unset;
+    height: 90%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+.grid-vertical.grid-100-2 {
+    width:  unset;
+    height: 100%;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
 }
@@ -116,6 +140,9 @@ nav > ul > li {
     width: 90%;
     height:calc(min(100vh, 100%));
     object-fit: cover;
+}
+.fit-contain {
+    object-fit: contain;
 }
 /* #endregion */
 /* #region background colors */
@@ -148,6 +175,7 @@ nav > ul > li {
 .centered {
     text-align: center;
     justify-self: center;
+    align-self: center;
     margin-left: auto;
     margin-right: auto;
 }
@@ -176,6 +204,9 @@ nav > ul > li {
     border-radius: 1vw;
     padding: 1rem;
     width: 30%;
+}
+.button:hover {
+    opacity: 0.95;
 }
 #empty {
     opacity: 0;
@@ -225,6 +256,11 @@ nav > ul > li {
     .grid-90-2 {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
+    }
+    .mobile-hidden {
+        opacity: 0;
+        height: 0;
+        width: 0;
     }
 }
 /* #endregion */
