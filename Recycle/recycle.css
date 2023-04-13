@@ -2,14 +2,8 @@
     position: fixed;
     width: 10vh;
     height: 10vh;
-    left: calc(50% - 5vh);
-    top: calc(100% - 10vh);
     z-index: 1;
     transition: 400ms;
-}
-#recycleDiv:hover {
-    width: 30vh;
-    left: calc(50% - 15vh);
 }
 #recycleDiv span {
     position: fixed;
@@ -18,18 +12,41 @@
     transition: margin-left 400ms;
     user-select: none;
 }
-#recycleDiv:hover span {
-    transition: margin-left 400ms, opacity 400ms;
-    margin-left: 0;
-    opacity: 1;
-    margin-top: 1.5rem;
-}
-#recycleDiv:hover #recycleIMG {
-    transform: rotateX(180deg);
-    margin-top: -0.25rem;
-}
 #recycleIMG {
     width: 10vh;
     aspect-ratio: 1/1;
     transition: transform 600ms, margin-top 400ms;
+}
+@media (min-aspect-ratio: 1/1) {
+    #recycleDiv {
+        left: calc(50% - 5vh);
+        top: calc(100% - 10vh);
+    }
+    #recycleDiv:hover {
+        width: 30vh;
+        left: calc(50% - 15vh);
+    }
+    #recycleDiv:hover span {
+        transition: margin-left 400ms, opacity 400ms;
+        margin-left: 0;
+        opacity: 1;
+        margin-top: 1.5rem;
+    }
+}
+@media (max-aspect-ratio: 1/1) {
+    body {
+        background-color: var(--green);
+    }
+    #recycleDiv {
+        background-color: var(--green);
+        position: relative;
+        width: 100vh;
+        left: calc(50% - 15vh);
+    }
+    #recycleDiv span {
+        position: absolute;
+        margin-left: 0;
+        opacity: 1;
+        margin-top: 1.5rem;
+    }
 }
