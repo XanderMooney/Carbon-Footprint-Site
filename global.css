@@ -74,6 +74,9 @@ img {
     background-color: black;
     transition: opacity 400ms;
 }
+.padding {
+    height: 10vh;
+}
 nav > ul > li {
     width: 100%;
 }
