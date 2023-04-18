@@ -1,8 +1,8 @@
 const mobileQuery = window.matchMedia('(max-aspect-ratio: 1/1)')
 let isMobile = false;
-let threeGrids = document.getElementsByClassName('grid-90-3')
-//threeGrids += document.querySelectorAll('grid-100-3')
 
+let threeGrids = document.querySelectorAll('.grid-90-3, .grid-100-3')
+console.log(threeGrids)
 for (let i = 0; i < threeGrids.length; ++i)
 {
     let gridTemplate = '';
