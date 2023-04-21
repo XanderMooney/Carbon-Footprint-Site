@@ -1,8 +1,7 @@
-/* #regions Basic Grids */
+/* #region Basic Grids */
 .screen-100 {
     display: grid;
     width: 100svw;
-    /* height: 100svh; */
     padding: 0;
     margin: 0;
     border: 0;
@@ -127,7 +126,6 @@
     gap: 1rem;
 }
 /* #endregion */
-
 @media (max-aspect-ratio: 1/1) { /* on vertically oriented devices */
     .mobile-hidden {
         opacity: 0;
