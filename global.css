@@ -45,6 +45,9 @@ nav > h2 {
     margin-left: 1vw;
     font-size: calc(1.25svw + 1.25svh);
 }
+nav.hidden li a {
+    opacity: 0;
+}
 a {
     text-decoration: none;
     color: var(--text);
@@ -111,6 +114,9 @@ nav > ul > li {
 }
 .bcg-warmSand {
     background-color: var(--warmSand);
+}
+.bcg-white {
+    background-color: #fff;
 }
 /* #endregion */
 /* #region Formatting */
